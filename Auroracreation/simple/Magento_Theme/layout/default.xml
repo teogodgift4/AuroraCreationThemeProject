@@ -1,0 +1,22 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">images/custom_logo.png</argument>
+                <argument name="logo_img_width" xsi:type="number">147</argument>
+                <argument name="logo_img_height" xsi:type="number">63</argument>
+            </arguments>
+        </referenceBlock>
+
+        <referenceBlock name="header.links">
+        <container name="left-header-links" htmlTag="div" htmlClass="left-header-links">
+        	 <block class="Magento\Framework\View\Element\Template" name="customeheader" template="Magento_Theme::customeheader.phtml" after="-"/>
+            </container>
+    	</referenceBlock>
+
+        <move element="left-header-links" destination="header.panel"/>
+
+        <referenceBlock name="wish-list-link" remove="true" />
+        <referenceBlock name="register-link" remove="true" />
+    </body>
+</page>
